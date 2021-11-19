@@ -1,0 +1,1 @@
+# odoo_sms_manager_jasmin

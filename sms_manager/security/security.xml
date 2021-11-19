@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_jasminsms_user" model="res.groups">
+            <field name="name">Jasmin SMS / User</field>
+        </record>
+    </data>
+      <data>
+        <record id="group_jasmin_sender" model="res.groups">
+            <field name="name">Jasmin SMS Sender Only</field>
+        </record>
+    </data>
+<!--    <record model="ir.rule" id="jasmin_r_sms_rule">-->
+<!--        <field name="name">Jasmin Sms Rule</field>-->
+<!--        <field name="model_id" ref="model_r_sms"/>-->
+<!--        <field name="domain_force">[('owners','in',[user.id])]</field>-->
+<!--        <field name="groups" eval="[(4,ref('group_jasminsms_user'))]"/>-->
+<!--    </record>-->
+<!--        <record model="ir.rule" id="jasmin_s_sms_rule">-->
+<!--        <field name="name">Jasmin Sms Rule</field>-->
+<!--        <field name="model_id" ref="model_s_sms"/>-->
+<!--        <field name="domain_force">[('create_uid', '=','uid')]</field>-->
+<!--        <field name="groups" eval="[(4,ref('group_jasminsms_user'))]"/>-->
+<!--    </record>-->
+</odoo>

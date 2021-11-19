@@ -1,0 +1,39 @@
+
+<odoo>
+        <record id="sms_crm_wiz" model="ir.ui.view">
+        <field name="name">Sending SMS Messages To Event Attendees</field>
+        <field name="model">send.sms.crm</field>
+        <field name="arch" type="xml">
+            <form class="o_form_document" string="Send Sms to Attendees">
+                <!--                <script>-->
+                <!--                    $(document).ready(function(){-->
+                <!--                    $(".modal-footer").hide();-->
+                <!--                    });-->
+                <!--                </script>-->
+                <group string="Gateway" colspan="4">
+                    <field name="gateway"/>
+                </group>
+                <notebook>
+                    <page string="Message">
+                        <field name="message" colspan="4" nolabel="1"/>
+                    </page>
+                    <page string="To">
+                        <field name="to" colspan="4" nolabel="1"/>
+                    </page>
+
+                </notebook>
+                <footer>
+                    <button name="send_message_crm" type="object" string="Send" class="btn btn-primary"/>
+                </footer>
+                <!--                </sheet>-->
+            </form>
+        </field>
+    </record>
+
+    <act_window id="lunch_crm_send"
+                binding_model="crm.lead"
+                name="Send SMS to company number"
+                res_model="send.sms.crm"
+                view_mode="form"
+                target="new"/>
+</odoo>

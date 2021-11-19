@@ -1,0 +1,39 @@
+
+<odoo>
+        <record id="sms_calander_wiz" model="ir.ui.view">
+        <field name="name">Sending SMS Messages To Event Attendees</field>
+        <field name="model">send.sms.calander</field>
+        <field name="arch" type="xml">
+            <form class="o_form_document" string="Send Sms to Attendees">
+                <!--                <script>-->
+                <!--                    $(document).ready(function(){-->
+                <!--                    $(".modal-footer").hide();-->
+                <!--                    });-->
+                <!--                </script>-->
+                <group string="Gateway" colspan="4">
+                    <field name="gateway"/>
+                </group>
+                <notebook>
+                    <page string="Message">
+                        <field name="message" colspan="4" nolabel="1" style="height:100px;"/>
+                    </page>
+                    <page string="To">
+                        <field name="to" colspan="4" nolabel="1"/>
+                    </page>
+
+                </notebook>
+                <footer>
+                    <button name="send_message_attendees" type="object" string="Send" class="btn btn-primary"/>
+                </footer>
+                <!--                </sheet>-->
+            </form>
+        </field>
+    </record>
+
+    <act_window id="lunch_calander_send"
+                binding_model="calendar.event"
+                name="Send SMS To Attendees"
+                res_model="send.sms.calander"
+                view_mode="form"
+                target="new"/>
+</odoo>
